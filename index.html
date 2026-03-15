@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tushar Bhati | UI/UX Designer & IoT Developer</title>
-    <meta name="description" content="Portfolio of Tushar Bhati - UI/UX Designer and B.Tech CSE (IoT) Student specializing in mobile-first design and IoT systems.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
+    <title>Abhinav Raghav | Full Stack Developer & QA Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -20,30 +14,21 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
                     },
                     colors: {
-                        // New Theme: Deep Ocean & Warm Amber
-                        primary: '#14b8a6',      // Teal 500
-                        secondary: '#f59e0b',    // Amber 500
-                        accent: '#06b6d4',       // Cyan 500
-                        dark: '#0f172a',         // Slate 900
-                        surface: '#1e293b',      // Slate 800
+                        primary: '#6366f1',
+                        secondary: '#ec4899',
+                        accent: '#8b5cf6',
+                        dark: '#0f172a',
+                        darker: '#020617',
                     },
                     animation: {
-                        'fade-in': 'fadeIn 0.8s ease-out',
-                        'slide-up': 'slideUp 0.8s ease-out',
                         'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 12s linear infinite',
                     },
                     keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(30px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-20px)' },
@@ -53,300 +38,498 @@
             }
         }
     </script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
     <style>
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #14b8a6;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #0d9488;
-        }
-        
-        /* New Gradient Text - Teal to Cyan to Amber */
         .gradient-text {
-            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 50%, #f59e0b 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-        /* Secondary gradient for variety */
-        .gradient-text-alt {
-            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
         .glass {
-            background: rgba(30, 41, 59, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
-        .glass:hover {
-            border-color: rgba(20, 184, 166, 0.3);
-        }
-        
-        .case-study-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .case-study-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 25px 50px -12px rgba(20, 184, 166, 0.15);
-        }
-        
         .skill-tag {
             transition: all 0.3s ease;
-            background: rgba(20, 184, 166, 0.1);
-            border: 1px solid rgba(20, 184, 166, 0.2);
         }
         .skill-tag:hover {
-            transform: scale(1.05);
-            background: rgba(20, 184, 166, 0.2);
-            border-color: rgba(20, 184, 166, 0.4);
-            box-shadow: 0 0 20px rgba(20, 184, 166, 0.2);
-        }
-        
-        .cursor-blink {
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-        
-        .profile-image {
-            transition: transform 0.5s ease;
-        }
-        .profile-container:hover .profile-image {
-            transform: scale(1.05);
-        }
-
-        /* Case Study Specific Styles */
-        .case-study-hero {
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, rgba(6, 182, 212, 0.05) 100%);
-        }
-        
-        .case-study-hero-alt {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(249, 115, 22, 0.05) 100%);
-        }
-        
-        .metric-card {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(20, 184, 166, 0.15);
-            transition: all 0.3s ease;
-        }
-        .metric-card:hover {
-            background: rgba(20, 184, 166, 0.05);
-            border-color: rgba(20, 184, 166, 0.4);
             transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
         }
-
-        .process-step {
-            position: relative;
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .process-step::after {
-            content: '';
-            position: absolute;
-            top: 2rem;
-            left: 50%;
-            width: 2px;
-            height: calc(100% - 2rem);
-            background: linear-gradient(to bottom, #14b8a6, transparent);
-            transform: translateX(-50%);
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
         }
-        .process-step:last-child::after {
-            display: none;
+        .timeline-line {
+            background: linear-gradient(to bottom, #6366f1, #ec4899);
         }
-
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(6, 182, 212, 0.05));
-            border-left: 4px solid #14b8a6;
-        }
-        
-        .highlight-box-alt {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(249, 115, 22, 0.05));
-            border-left: 4px solid #f59e0b;
-        }
-
-        /* Glow effects */
-        .glow-teal {
-            box-shadow: 0 0 40px rgba(20, 184, 166, 0.15);
-        }
-        
-        .glow-amber {
-            box-shadow: 0 0 40px rgba(245, 158, 11, 0.15);
-        }
-
-        /* Button gradients */
-        .btn-primary {
-            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            transition: all 0.3s ease;
-        }
-        .btn-secondary:hover {
-            box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.5);
-            transform: translateY(-2px);
-        }
-
-        /* Navigation active state */
         .nav-link {
             position: relative;
         }
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #14b8a6, #f59e0b);
-            transition: width 0.3s ease;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(90deg, #6366f1, #ec4899);
+            transition: width 0.3s;
         }
         .nav-link:hover::after {
             width: 100%;
         }
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 10s ease-in-out infinite;
+        }
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #6366f1;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #6366f1 }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-teal-500 selection:text-white overflow-x-hidden">
+<body class="bg-darker text-gray-100 font-sans overflow-x-hidden selection:bg-primary selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass border-b border-teal-500/10 transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 glass-dark border-b border-white/5 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="text-2xl font-bold gradient-text font-serif italic hover:opacity-80 transition-opacity cursor-pointer">TB.</a>
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl font-display">
+                        AR
+                    </div>
+                    <span class="font-display font-bold text-xl tracking-tight">Abhinav Raghav</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="nav-link text-slate-300 hover:text-teal-400 transition-colors text-sm font-medium">About</a>
-                    <a href="#skills" class="nav-link text-slate-300 hover:text-teal-400 transition-colors text-sm font-medium">Skills</a>
-                    <a href="#experience" class="nav-link text-slate-300 hover:text-teal-400 transition-colors text-sm font-medium">Experience</a>
-                    <a href="#case-studies" class="nav-link text-slate-300 hover:text-teal-400 transition-colors text-sm font-medium">Case Studies</a>
-                    <a href="#contact" class="px-4 py-2 btn-primary rounded-full text-sm font-medium text-white">Contact</a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#experience" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Experience</a>
+                        <a href="#projects" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Projects</a>
+                        <a href="#skills" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">Skills</a>
+                        <a href="#contact" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-primary/25 transition-all transform hover:scale-105">Contact Me</a>
+                    </div>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" class="text-slate-300 hover:text-teal-400 focus:outline-none transition-colors">
-                        <i data-lucide="menu" class="h-6 w-6"></i>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white p-2">
+                        <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-teal-500/10">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/5">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="block px-3 py-2 text-slate-300 hover:text-teal-400 hover:bg-slate-800/50 rounded-md transition-colors">About</a>
-                <a href="#skills" class="block px-3 py-2 text-slate-300 hover:text-teal-400 hover:bg-slate-800/50 rounded-md transition-colors">Skills</a>
-                <a href="#experience" class="block px-3 py-2 text-slate-300 hover:text-teal-400 hover:bg-slate-800/50 rounded-md transition-colors">Experience</a>
-                <a href="#case-studies" class="block px-3 py-2 text-slate-300 hover:text-teal-400 hover:bg-slate-800/50 rounded-md transition-colors">Case Studies</a>
-                <a href="#contact" class="block px-3 py-2 text-teal-400 font-medium">Contact</a>
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">About</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Experience</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-primary hover:text-white">Contact Me</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-        <!-- Background Elements - Teal & Amber -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-40 -right-40 w-96 h-96 bg-teal-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
-            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-amber-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 3s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-        </div>
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Background Blobs -->
+        <div class="blob bg-primary w-96 h-96 rounded-full top-20 -left-20"></div>
+        <div class="blob bg-secondary w-80 h-80 rounded-full bottom-20 -right-20 animation-delay-2000"></div>
+        <div class="blob bg-accent w-64 h-64 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animation-delay-4000"></div>
         
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="animate-fade-in">
-                <p class="text-teal-400 font-medium mb-4 tracking-wider uppercase text-sm">Hello, I'm</p>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 font-serif">
-                    Tushar <span class="gradient-text italic">Bhati</span>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal active">
+                <div class="inline-block mb-4 px-4 py-2 rounded-full glass text-primary text-sm font-semibold tracking-wide uppercase border border-primary/20">
+                    <i class="fas fa-circle text-xs mr-2 animate-pulse"></i>Available for Opportunities
+                </div>
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
+                    Hi, I'm <span class="gradient-text">Abhinav Raghav</span>
                 </h1>
-                <div class="h-8 mb-8">
-                    <span id="typewriter" class="text-xl md:text-2xl text-slate-400 font-light"></span>
-                    <span class="cursor-blink text-teal-400">|</span>
+                <div class="h-16 md:h-20 flex items-center justify-center">
+                    <p class="text-xl md:text-3xl text-gray-400 font-light typewriter" id="typewriter-text">
+                        Full Stack Developer & QA Engineer
+                    </p>
                 </div>
-                <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-10 leading-relaxed">
-                    UI/UX-focused B.Tech CSE (IoT) student crafting mobile-first experiences. 
-                    I bridge the gap between elegant design and technical implementation, 
-                    specializing in accessible, user-centered interfaces for real-world applications.
+                <p class="mt-6 text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    B.Tech Computer Science student at Dronacharya Group of Institutions. Specializing in automation testing, 
+                    full-stack development, and AI-powered solutions. Currently making an impact at <span class="text-primary font-semibold">Xcelore</span> & <span class="text-primary font-semibold">Paytm</span>.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#case-studies" class="px-8 py-4 btn-primary rounded-full font-medium text-white flex items-center gap-2">
-                        View Case Studies <i data-lucide="arrow-down" class="h-4 w-4"></i>
+                
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#projects" class="group relative px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold text-white overflow-hidden transition-all hover:shadow-2xl hover:shadow-primary/25">
+                        <span class="relative z-10 flex items-center gap-2">
+                            View My Work <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                        <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                     </a>
-                    <a href="#contact" class="px-8 py-4 border border-teal-500/30 rounded-full font-medium hover:bg-teal-500/10 hover:border-teal-400 transition-all flex items-center gap-2 text-teal-400">
-                        Get in Touch <i data-lucide="message-circle" class="h-4 w-4"></i>
+                    <a href="https://linkedin.com/in/abhinav-raghav-269693275" target="_blank" class="px-8 py-4 glass rounded-full font-semibold text-white hover:bg-white/10 transition-all border border-white/10 flex items-center gap-2">
+                        <i class="fab fa-linkedin text-xl"></i> LinkedIn Profile
                     </a>
                 </div>
-                <div class="mt-12 flex justify-center gap-6">
-                    <a href="https://linktr.ee/TUSHARBHATI0644" target="_blank" class="p-3 rounded-full bg-slate-800/50 border border-teal-500/20 hover:border-teal-400 hover:bg-teal-500/10 transition-all hover:scale-110 text-slate-400 hover:text-teal-400">
-                        <i data-lucide="link" class="h-5 w-5"></i>
-                    </a>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tusharbhati0644@gmail.com" target="_blank" class="p-3 rounded-full bg-slate-800/50 border border-teal-500/20 hover:border-teal-400 hover:bg-teal-500/10 transition-all hover:scale-110 text-slate-400 hover:text-teal-400" title="Open Gmail">
-                        <i data-lucide="mail" class="h-5 w-5"></i>
-                    </a>
-                    <a href="tel:+919560750644" class="p-3 rounded-full bg-slate-800/50 border border-teal-500/20 hover:border-teal-400 hover:bg-teal-500/10 transition-all hover:scale-110 text-slate-400 hover:text-teal-400">
-                        <i data-lucide="phone" class="h-5 w-5"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/tushar-bhati-345915250/" target="_blank" class="p-3 rounded-full bg-slate-800/50 border border-teal-500/20 hover:border-teal-400 hover:bg-teal-500/10 transition-all hover:scale-110 text-slate-400 hover:text-teal-400">
-                        <i data-lucide="linkedin" class="h-5 w-5"></i>
-                    </a>
+
+                <div class="mt-16 flex justify-center gap-8 text-gray-400">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white mb-1">7.50</div>
+                        <div class="text-sm">CGPA</div>
+                    </div>
+                    <div class="w-px bg-gray-700"></div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white mb-1">3+</div>
+                        <div class="text-sm">Internships</div>
+                    </div>
+                    <div class="w-px bg-gray-700"></div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white mb-1">5+</div>
+                        <div class="text-sm">Projects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-30 blur-xl"></div>
+                        <div class="relative glass rounded-2xl p-8 border border-white/10">
+                            <div class="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-4xl font-bold text-white mb-4">
+                                        AR
+                                    </div>
+                                    <p class="text-gray-400">Computer Science Engineer</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 grid grid-cols-2 gap-4">
+                                <div class="glass rounded-lg p-4 text-center">
+                                    <i class="fas fa-map-marker-alt text-primary text-xl mb-2"></i>
+                                    <p class="text-sm text-gray-300">Greater Noida, UP</p>
+                                </div>
+                                <div class="glass rounded-lg p-4 text-center">
+                                    <i class="fas fa-graduation-cap text-secondary text-xl mb-2"></i>
+                                    <p class="text-sm text-gray-300">B.Tech CSE</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal">
+                    <h2 class="text-4xl font-display font-bold mb-6">About <span class="gradient-text">Me</span></h2>
+                    <div class="space-y-4 text-gray-300 leading-relaxed">
+                        <p>
+                            I'm a highly motivated and detail-oriented B.Tech student specializing in Computer Science and Information Technology. 
+                            With strong technical skills in frontend development, JavaScript, HTML, CSS, and coding, I bring a solid foundation in 
+                            problem-solving and analytical thinking.
+                        </p>
+                        <p>
+                            Currently, I'm working as a <span class="text-primary font-semibold">Software Engineer Trainee at Xcelore</span>, 
+                            where I've built Python/UiPath automation scripts that cut manual testing by 40% and boosted regression coverage for fintech apps.
+                        </p>
+                        <p>
+                            Previously at <span class="text-secondary font-semibold">Paytm</span>, I contributed as a Quality Analyst and Intern, 
+                            participating in manual and automation testing, collaborating with cross-functional teams, and conducting market research.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Development</h4>
+                                <p class="text-sm text-gray-400">Full Stack & Mobile</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Testing</h4>
+                                <p class="text-sm text-gray-400">Automation & QA</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">AI/ML</h4>
+                                <p class="text-sm text-gray-400">NLP & Automation</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-500">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Leadership</h4>
+                                <p class="text-sm text-gray-400">Team Management</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 font-serif">About <span class="gradient-text">Me</span></h2>
-                    <div class="space-y-4 text-slate-300 leading-relaxed">
-                        <p>
-                            I'm a passionate <strong class="text-teal-400">UI/UX Designer</strong> and <strong class="text-amber-400">IoT Developer</strong> 
-                            currently pursuing B.Tech in CSE (IoT) at ABES Institute of Technology. My unique blend of design thinking 
-                            and technical expertise allows me to create solutions that are both beautiful and functional.
-                        </p>
-                        <p>
-                            With hands-on experience in designing mobile-first interfaces for real-world problem statements—including 
-                            government-scale applications—I specialize in translating complex requirements into clear, usable screen designs. 
-                            My focus areas include layout hierarchy, accessibility, and design consistency.
-                        </p>
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 bg-dark/50 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-display font-bold mb-4">Work <span class="gradient-text">Experience</span></h2>
+                <p class="text-gray-400">My professional journey and internships</p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 timeline-line rounded-full"></div>
+                
+                <!-- Xcelore -->
+                <div class="relative mb-12 reveal">
+                    <div class="flex items-center justify-center">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-darker z-10"></div>
                     </div>
-                    <div class="mt-8 grid grid-cols-2 gap-4">
-                        <div class="p-4 glass rounded-lg border border-teal-500/20">
-                            <h4 class="text-2xl font-bold text-teal-400 mb-1">1+</h4>
-                            <p class="text-sm text-slate-400">Years Experience</p>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="md:text-right md:pr-12">
+                            <div class="glass rounded-2xl p-6 border border-white/10 hover:border-primary/30 transition-all">
+                                <span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3">Current</span>
+                                <h3 class="text-xl font-bold mb-1">Software Engineer Trainee</h3>
+                                <p class="text-primary font-semibold mb-2">Xcelore Private Limited</p>
+                                <p class="text-sm text-gray-400 mb-3">Feb 2026 - Present</p>
+                                <ul class="text-sm text-gray-300 space-y-2 md:text-right">
+                                    <li>• Built Python/UiPath automation scripts, cutting manual testing by 40%</li>
+                                    <li>• Created SQL-based test cases for APIs/databases, detecting 150+ defects</li>
+                                    <li>• Integrated Selenium/Jenkins into CI/CD pipelines, speeding releases by 25%</li>
+                                </ul>
+                                <div class="mt-4 flex flex-wrap gap-2 justify-end">
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Python</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">UiPath</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Selenium</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Jenkins</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="p-4 glass rounded-lg border border-amber-500/20">
-                            <h4 class="text-2xl font-bold text-amber-400 mb-1">3+</h4>
-                            <p class="text-sm text-slate-400">Projects Completed</p>
+                        <div class="hidden md:block"></div>
+                    </div>
+                </div>
+
+                <!-- Paytm Intern -->
+                <div class="relative mb-12 reveal">
+                    <div class="flex items-center justify-center">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-darker z-10"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="hidden md:block"></div>
+                        <div class="md:pl-12">
+                            <div class="glass rounded-2xl p-6 border border-white/10 hover:border-secondary/30 transition-all">
+                                <h3 class="text-xl font-bold mb-1">IT Product & Services Intern</h3>
+                                <p class="text-secondary font-semibold mb-2">Paytm</p>
+                                <p class="text-sm text-gray-400 mb-3">Sep 2025 - Feb 2026</p>
+                                <ul class="text-sm text-gray-300 space-y-2">
+                                    <li>• Collaborated with cross-functional teams on live projects</li>
+                                    <li>• Executed technical assignments and participated in strategic meetings</li>
+                                    <li>• Conducted market research and analyzed competitor trends</li>
+                                    <li>• Managed platform documentation and coordinated testing</li>
+                                </ul>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Java</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Appium</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Selenium</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Robot Framework</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="order-1 md:order-2 relative">
-                    <div class="relative w-full aspect-square max-w-md mx-auto profile-container">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-teal-600 to-amber-600 rounded-2xl transform rotate-6 opacity-40"></div>
-                        <div class="absolute inset-0 bg-slate-800 rounded-2xl overflow-hidden border border-teal-500/20 glow-teal">
-                            <img src="https://github.com/tushar0644/Portfolio/blob/main/profile.jpeg?raw=true" 
-                                 alt="Tushar Bhati" 
-                                 class="w-full h-full object-cover profile-image"
-                                 onerror="this.src=''; this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full\'><i data-lucide=\'user\' class=\'h-32 w-32 text-slate-600\'></i></div>\'; lucide.createIcons();">
+
+                <!-- Paytm QA -->
+                <div class="relative mb-12 reveal">
+                    <div class="flex items-center justify-center">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-darker z-10"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="md:text-right md:pr-12">
+                            <div class="glass rounded-2xl p-6 border border-white/10 hover:border-accent/30 transition-all">
+                                <h3 class="text-xl font-bold mb-1">Quality Analyst Intern</h3>
+                                <p class="text-accent font-semibold mb-2">Paytm</p>
+                                <p class="text-sm text-gray-400 mb-3">Apr 2025 - Aug 2025</p>
+                                <ul class="text-sm text-gray-300 space-y-2 md:text-right">
+                                    <li>• Participated in manual and automation testing processes</li>
+                                    <li>• Collaborated with developers to resolve bugs and defects</li>
+                                    <li>• Performed regression testing and maintained test cases</li>
+                                    <li>• Learned and applied QA methodologies in agile environment</li>
+                                </ul>
+                                <div class="mt-4 flex flex-wrap gap-2 justify-end">
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Manual Testing</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Automation</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">JIRA</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Mobile Testing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+                </div>
+
+                <!-- Pledge A Smile -->
+                <div class="relative reveal">
+                    <div class="flex items-center justify-center">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-darker z-10"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="hidden md:block"></div>
+                        <div class="md:pl-12">
+                            <div class="glass rounded-2xl p-6 border border-white/10 hover:border-green-500/30 transition-all">
+                                <h3 class="text-xl font-bold mb-1">Social Media Intern</h3>
+                                <p class="text-green-400 font-semibold mb-2">Pledge A Smile Foundation</p>
+                                <p class="text-sm text-gray-400 mb-3">Jul 2025 - Aug 2025</p>
+                                <ul class="text-sm text-gray-300 space-y-2">
+                                    <li>• Led fundraising activities for Project SEVA campaign</li>
+                                    <li>• Promoted campaign and tracked contributions</li>
+                                    <li>• Assisted in organizing medical camps</li>
+                                    <li>• Spread awareness for public health and healthcare</li>
+                                </ul>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Social Media</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Fundraising</span>
+                                    <span class="px-2 py-1 bg-white/5 rounded text-xs">Campaign Management</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-display font-bold mb-4">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="text-gray-400">Innovative solutions I've built</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- SATHI -->
+                <div class="project-card group relative glass rounded-2xl overflow-hidden border border-white/10 reveal">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <a href="https://drive.google.com/file/d/146-o9wyf3WVXzhIMYkCugDqTwzRTZQHk/view" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">SATHI (Healthcare Ally)</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">
+                            AI-powered healthcare platform for appointment booking, health tracking, and emergency SOS features. 
+                            Integrated chatbot for instant medical guidance.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">ReactJS</span>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">MERN</span>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">Firebase</span>
+                            <span class="px-2 py-1 bg-primary/10 text-primary rounded text-xs">Botpress</span>
+                        </div>
+                        <div class="pt-4 border-t border-white/10">
+                            <p class="text-xs text-gray-500">Team Lead • 3 Members</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Synopsis Generator -->
+                <div class="project-card group relative glass rounded-2xl overflow-hidden border border-white/10 reveal">
+                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span class="text-gray-500 text-xs">Self Project</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-secondary transition-colors">Synopsis Generator</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">
+                            AI-powered tool using NLP and machine learning to create concise summaries for books, movies, 
+                            research papers, and articles with customizable length and tone.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs">Python</span>
+                            <span class="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs">NLP</span>
+                            <span class="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs">HTML/CSS/JS</span>
+                            <span class="px-2 py-1 bg-secondary/10 text-secondary rounded text-xs">Web API</span>
+                        </div>
+                        <div class="pt-4 border-t border-white/10">
+                            <p class="text-xs text-gray-500">Team Size: 4 • AI/ML Project</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roadmap Generator -->
+                <div class="project-card group relative glass rounded-2xl overflow-hidden border border-white/10 reveal">
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <span class="text-gray-500 text-xs">Self Project</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-accent transition-colors">Roadmap Generator</h3>
+                        <p class="text-gray-400 text-sm mb-4 flex-grow">
+                            Personalized learning path creator with smart course recommendations, progress tracking, 
+                            and interactive dashboard for career advancement and skill development.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-xs">AI</span>
+                            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-xs">Python</span>
+                            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-xs">HTML5</span>
+                            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-xs">API</span>
+                        </div>
+                        <div class="pt-4 border-t border-white/10">
+                            <p class="text-xs text-gray-500">Team Size: 4 • EdTech</p>
                         </div>
                     </div>
                 </div>
@@ -355,676 +538,336 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">My <span class="gradient-text">Skills</span></h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">A combination of design expertise and technical foundation</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- UX & Product Design -->
-                <div class="glass p-8 rounded-2xl hover:border-teal-500/50 transition-all duration-300 group glow-teal">
-                    <div class="w-14 h-14 bg-teal-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-teal-500/30">
-                        <i data-lucide="pen-tool" class="h-7 w-7 text-teal-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-white">UX & Product Design</h3>
-                    <ul class="space-y-2 text-slate-300 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-teal-400"></i> UI Screen Design</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-teal-400"></i> User Flow Structuring</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-teal-400"></i> Mobile-first Design</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-teal-400"></i> Accessibility-focused Layouts</li>
-                    </ul>
-                </div>
-
-                <!-- Technical Foundation -->
-                <div class="glass p-8 rounded-2xl hover:border-amber-500/50 transition-all duration-300 group glow-amber">
-                    <div class="w-14 h-14 bg-amber-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-amber-500/30">
-                        <i data-lucide="code" class="h-7 w-7 text-amber-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-white">Technical Foundation</h3>
-                    <ul class="space-y-2 text-slate-300 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-400"></i> HTML, CSS, JavaScript</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-400"></i> Python & C Programming</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-400"></i> IoT Systems</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-amber-400"></i> Cloud-connected Architectures</li>
-                    </ul>
-                </div>
-
-                <!-- Tools & Platforms -->
-                <div class="glass p-8 rounded-2xl hover:border-cyan-500/50 transition-all duration-300 group">
-                    <div class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-cyan-500/30">
-                        <i data-lucide="wrench" class="h-7 w-7 text-cyan-400"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-white">Tools & Platforms</h3>
-                    <ul class="space-y-2 text-slate-300 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-cyan-400"></i> Figma & Canva</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-cyan-400"></i> GitHub</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-cyan-400"></i> Node-RED</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="h-4 w-4 text-cyan-400"></i> MS Excel</li>
-                    </ul>
-                </div>
+    <section id="skills" class="py-24 bg-dark/50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-display font-bold mb-4">Technical <span class="gradient-text">Skills</span></h2>
+                <p class="text-gray-400">Technologies and tools I work with</p>
             </div>
 
-            <!-- Tech Stack Tags -->
-            <div class="mt-12 flex flex-wrap justify-center gap-3">
-                <span class="skill-tag px-4 py-2 rounded-full text-sm text-teal-300">Figma</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-sm text-teal-300">UI Design</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-sm text-teal-300">UX Research</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-sm text-teal-300">Prototyping</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-sm text-amber-300">HTML/CSS</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-sm text-amber-300">IoT</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-sm text-amber-300">Python</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-sm text-cyan-300">JavaScript</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-sm text-cyan-300">Mobile-first</span>
-                <span class="skill-tag px-4 py-2 rounded-full text-sm text-cyan-300">Accessibility</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies Section -->
-    <section id="case-studies" class="py-24 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Case <span class="gradient-text">Studies</span></h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Deep dives into my design process, problem-solving approach, and solutions</p>
-            </div>
-
-            <!-- Case Study 1: Movie Ticket App - Teal Theme -->
-            <div class="mb-20 case-study-card glass rounded-3xl overflow-hidden border border-teal-500/10">
-                <!-- Hero -->
-                <div class="case-study-hero p-8 md:p-12 border-b border-teal-500/10">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-                        <div>
-                            <span class="px-3 py-1 bg-teal-500/20 text-teal-300 rounded-full text-xs font-medium uppercase tracking-wider border border-teal-500/30">Case Study 01</span>
-                            <h3 class="text-3xl md:text-4xl font-bold mt-4 mb-2 font-serif text-white">Movie Ticket Booking App</h3>
-                            <p class="text-slate-400">Redesigning the cinema booking experience for mobile-first users</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Development -->
+                <div class="glass rounded-2xl p-6 border border-white/10 reveal">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                            <i class="fas fa-code"></i>
                         </div>
-                        <a href="https://www.figma.com/proto/sdzdIXERlT8WYAuuMa5i4E/Untitled?page-id=0%3A1&node-id=1-65&p=f&viewport=84%2C45%2C0.21&t=TOvUOGlYZus4F1jE-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A65" 
-                           target="_blank" 
-                           class="px-6 py-3 btn-primary rounded-full text-sm font-medium text-white flex items-center gap-2">
-                            View Prototype <i data-lucide="external-link" class="h-4 w-4"></i>
-                        </a>
+                        <h3 class="font-bold text-lg">Development</h3>
                     </div>
-                    
-                    <!-- Quick Stats -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                        <div class="metric-card p-4 rounded-xl text-center">
-                            <i data-lucide="clock" class="h-5 w-5 text-teal-400 mx-auto mb-2"></i>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider">Duration</p>
-                            <p class="text-sm font-semibold text-white">3 Weeks</p>
-                        </div>
-                        <div class="metric-card p-4 rounded-xl text-center">
-                            <i data-lucide="users" class="h-5 w-5 text-teal-400 mx-auto mb-2"></i>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider">Role</p>
-                            <p class="text-sm font-semibold text-white">Solo Designer</p>
-                        </div>
-                        <div class="metric-card p-4 rounded-xl text-center">
-                            <i data-lucide="smartphone" class="h-5 w-5 text-teal-400 mx-auto mb-2"></i>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider">Platform</p>
-                            <p class="text-sm font-semibold text-white">Mobile App</p>
-                        </div>
-                        <div class="metric-card p-4 rounded-xl text-center">
-                            <i data-lucide="layers" class="h-5 w-5 text-teal-400 mx-auto mb-2"></i>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider">Screens</p>
-                            <p class="text-sm font-semibold text-white">15+</p>
-                        </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-primary/50 hover:bg-primary/10 cursor-default">Java</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-primary/50 hover:bg-primary/10 cursor-default">Python</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-primary/50 hover:bg-primary/10 cursor-default">JavaScript</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-primary/50 hover:bg-primary/10 cursor-default">HTML5</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-primary/50 hover:bg-primary/10 cursor-default">CSS</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-primary/50 hover:bg-primary/10 cursor-default">ReactJS</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-primary/50 hover:bg-primary/10 cursor-default">Node.js</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-primary/50 hover:bg-primary/10 cursor-default">Web API</span>
                     </div>
                 </div>
 
-                <div class="p-8 md:p-12 space-y-12">
-                    <!-- Problem Statement -->
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="md:col-span-2">
-                            <h4 class="text-xl font-bold mb-4 flex items-center gap-2 text-white">
-                                <i data-lucide="alert-circle" class="h-5 w-5 text-red-400"></i>
-                                The Problem
-                            </h4>
-                            <p class="text-slate-300 leading-relaxed mb-4">
-                                Traditional movie booking apps suffer from cluttered interfaces, complicated seat selection processes, and poor mobile optimization. Users often abandon bookings due to friction in the ticket selection flow and lack of visual clarity regarding seat availability and cinema layout.
-                            </p>
-                            <div class="highlight-box p-4 rounded-r-xl">
-                                <p class="text-sm text-slate-300 italic">
-                                    "How might we streamline the movie ticket booking process to reduce booking time by 50% while maintaining a premium, cinema-like experience?"
-                                </p>
-                            </div>
+                <!-- Testing & QA -->
+                <div class="glass rounded-2xl p-6 border border-white/10 reveal">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+                            <i class="fas fa-vial"></i>
                         </div>
-                        <div class="glass p-6 rounded-xl border border-teal-500/20">
-                            <h5 class="font-semibold mb-3 text-teal-400">Key Challenges</h5>
-                            <ul class="space-y-2 text-sm text-slate-300">
-                                <li class="flex gap-2"><i data-lucide="x-circle" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5"></i> Complex seat selection UI</li>
-                                <li class="flex gap-2"><i data-lucide="x-circle" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5"></i> Unclear pricing breakdown</li>
-                                <li class="flex gap-2"><i data-lucide="x-circle" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5"></i> Poor mobile responsiveness</li>
-                                <li class="flex gap-2"><i data-lucide="x-circle" class="h-4 w-4 text-red-400 flex-shrink-0 mt-0.5"></i> Lack of visual feedback</li>
-                            </ul>
-                        </div>
+                        <h3 class="font-bold text-lg">Testing & QA</h3>
                     </div>
-
-                    <!-- Process -->
-                    <div>
-                        <h4 class="text-xl font-bold mb-6 flex items-center gap-2 text-white">
-                            <i data-lucide="git-branch" class="h-5 w-5 text-teal-400"></i>
-                            Design Process
-                        </h4>
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="process-step text-center">
-                                <div class="w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-teal-500/40">
-                                    <span class="text-teal-400 font-bold">1</span>
-                                </div>
-                                <h5 class="font-semibold mb-1 text-white">Research</h5>
-                                <p class="text-xs text-slate-400">Competitor analysis of BookMyShow, Paytm, and INOX apps</p>
-                            </div>
-                            <div class="process-step text-center">
-                                <div class="w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-teal-500/40">
-                                    <span class="text-teal-400 font-bold">2</span>
-                                </div>
-                                <h5 class="font-semibold mb-1 text-white">User Flows</h5>
-                                <p class="text-xs text-slate-400">Mapped optimal booking journey from browse to confirmation</p>
-                            </div>
-                            <div class="process-step text-center">
-                                <div class="w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-teal-500/40">
-                                    <span class="text-teal-400 font-bold">3</span>
-                                </div>
-                                <h5 class="font-semibold mb-1 text-white">Wireframing</h5>
-                                <p class="text-xs text-slate-400">Low-fi sketches focusing on thumb-zone navigation</p>
-                            </div>
-                            <div class="process-step text-center">
-                                <div class="w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-teal-500/40">
-                                    <span class="text-teal-400 font-bold">4</span>
-                                </div>
-                                <h5 class="font-semibold mb-1 text-white">Visual Design</h5>
-                                <p class="text-xs text-slate-400">Dark theme with high contrast for cinema ambiance</p>
-                            </div>
-                        </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-secondary/50 hover:bg-secondary/10 cursor-default">Selenium</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-secondary/50 hover:bg-secondary/10 cursor-default">Appium</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-secondary/50 hover:bg-secondary/10 cursor-default">Manual Testing</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-secondary/50 hover:bg-secondary/10 cursor-default">Automation</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-secondary/50 hover:bg-secondary/10 cursor-default">Regression</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-secondary/50 hover:bg-secondary/10 cursor-default">Unit Testing</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-secondary/50 hover:bg-secondary/10 cursor-default">JIRA</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-secondary/50 hover:bg-secondary/10 cursor-default">UiPath</span>
                     </div>
+                </div>
 
-                    <!-- Solution -->
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h4 class="text-xl font-bold mb-4 flex items-center gap-2 text-white">
-                                <i data-lucide="check-circle" class="h-5 w-5 text-teal-400"></i>
-                                The Solution
-                            </h4>
-                            <div class="space-y-4">
-                                <div class="flex gap-4">
-                                    <div class="w-8 h-8 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-teal-500/30">
-                                        <i data-lucide="layout" class="h-4 w-4 text-teal-400"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-white mb-1">Intuitive Seat Selection</h5>
-                                        <p class="text-sm text-slate-400">Interactive seat map with color-coded availability, zoom functionality, and clear pricing tiers (Standard, Premium, VIP).</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-4">
-                                    <div class="w-8 h-8 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-teal-500/30">
-                                        <i data-lucide="zap" class="h-4 w-4 text-teal-400"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-white mb-1">Quick Booking Flow</h5>
-                                        <p class="text-sm text-slate-400">Reduced steps from 5 to 3 with smart defaults and persistent cart across sessions.</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-4">
-                                    <div class="w-8 h-8 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-teal-500/30">
-                                        <i data-lucide="ticket" class="h-4 w-4 text-teal-400"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-white mb-1">Digital Ticket UI</h5>
-                                        <p class="text-sm text-slate-400">Apple Wallet-style digital tickets with QR codes, showtime reminders, and easy sharing.</p>
-                                    </div>
-                                </div>
-                            </div>
+                <!-- Databases & Tools -->
+                <div class="glass rounded-2xl p-6 border border-white/10 reveal">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                            <i class="fas fa-database"></i>
                         </div>
-                        <div class="bg-gradient-to-br from-teal-900/20 to-cyan-900/20 p-6 rounded-2xl border border-teal-500/20 glow-teal">
-                            <img src="https://raw.githubusercontent.com/tushar0644/Portfolio/d9cea2acaf0a5a4d2acf2ffcd8ead4395ec2069a/movie-app.svg" 
-                                 alt="Movie App Screens" 
-                                 class="w-full rounded-lg shadow-2xl"
-                                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-64 text-slate-500\'>Movie App Preview</div>'">
-                        </div>
+                        <h3 class="font-bold text-lg">Databases & Tools</h3>
                     </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-accent/50 hover:bg-accent/10 cursor-default">SQL</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-accent/50 hover:bg-accent/10 cursor-default">RDBMS</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-accent/50 hover:bg-accent/10 cursor-default">Firebase</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-accent/50 hover:bg-accent/10 cursor-default">Git</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-accent/50 hover:bg-accent/10 cursor-default">Jenkins</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-accent/50 hover:bg-accent/10 cursor-default">PyCharm</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-accent/50 hover:bg-accent/10 cursor-default">IntelliJ IDEA</span>
+                    </div>
+                </div>
 
-                    <!-- Results -->
-                    <div class="bg-gradient-to-r from-teal-600/10 to-cyan-600/10 rounded-2xl p-6 border border-teal-500/20">
-                        <h4 class="text-lg font-bold mb-4 flex items-center gap-2 text-white">
-                            <i data-lucide="trending-up" class="h-5 w-5 text-teal-400"></i>
-                            Impact & Learnings
-                        </h4>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div>
-                                <p class="text-2xl font-bold text-teal-400 mb-1">40%</p>
-                                <p class="text-sm text-slate-300">Reduction in booking steps</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-bold text-teal-400 mb-1">WCAG 2.1</p>
-                                <p class="text-sm text-slate-300">AA Accessibility compliance</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-bold text-teal-400 mb-1">Dark Mode</p>
-                                <p class="text-sm text-slate-300">Premium cinema aesthetic</p>
-                            </div>
+                <!-- AI & Others -->
+                <div class="glass rounded-2xl p-6 border border-white/10 reveal">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500">
+                            <i class="fas fa-brain"></i>
                         </div>
+                        <h3 class="font-bold text-lg">AI & Soft Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-green-500/50 hover:bg-green-500/10 cursor-default">Machine Learning</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-green-500/50 hover:bg-green-500/10 cursor-default">NLP</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-green-500/50 hover:bg-green-500/10 cursor-default">Botpress</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-green-500/50 hover:bg-green-500/10 cursor-default">Team Leadership</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-green-500/50 hover:bg-green-500/10 cursor-default">Problem Solving</span>
+                        <span class="skill-tag px-3 py-1.5 bg-white/5 rounded-lg text-sm border border-white/5 hover:border-green-500/50 hover:bg-green-500/10 cursor-default">Communication</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Case Study 2: PM Internship App - Amber Theme -->
-            <div class="case-study-card glass rounded-3xl overflow-hidden border border-amber-500/10">
-                <!-- Hero -->
-                <div class="case-study-hero-alt p-8 md:p-12 border-b border-amber-500/10">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-                        <div>
-                            <span class="px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full text-xs font-medium uppercase tracking-wider border border-amber-500/30">Case Study 02</span>
-                            <h3 class="text-3xl md:text-4xl font-bold mt-4 mb-2 font-serif text-white">PM Internship Portal</h3>
-                            <p class="text-slate-400">Government-scale internship discovery platform for first-time job seekers</p>
-                        </div>
-                        <a href="https://www.figma.com/proto/iAyqdr4LrpP6xbn23yD2HS/PM-internship-project?page-id=120%3A1335&node-id=120-1373&p=f&viewport=-51%2C201%2C0.23&t=INgixv4cG93hr5q4-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=120%3A1373" 
-                           target="_blank" 
-                           class="px-6 py-3 btn-secondary rounded-full text-sm font-medium text-white flex items-center gap-2">
-                            View Prototype <i data-lucide="external-link" class="h-4 w-4"></i>
-                        </a>
+            <!-- Education -->
+            <div class="mt-16 glass rounded-2xl p-8 border border-white/10 reveal">
+                <h3 class="text-2xl font-display font-bold mb-6 flex items-center gap-3">
+                    <i class="fas fa-graduation-cap text-primary"></i> Education
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="relative pl-6 border-l-2 border-primary/30">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary"></div>
+                        <h4 class="font-bold text-lg">B.Tech - Computer Science</h4>
+                        <p class="text-primary font-medium">Dronacharya Group of Institutions</p>
+                        <p class="text-sm text-gray-400">2022 - 2026 • CGPA: 7.50/10</p>
                     </div>
-                    
-                    <!-- Quick Stats -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                        <div class="metric-card p-4 rounded-xl text-center border-amber-500/20">
-                            <i data-lucide="clock" class="h-5 w-5 text-amber-400 mx-auto mb-2"></i>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider">Duration</p>
-                            <p class="text-sm font-semibold text-white">4 Weeks</p>
-                        </div>
-                        <div class="metric-card p-4 rounded-xl text-center border-amber-500/20">
-                            <i data-lucide="users" class="h-5 w-5 text-amber-400 mx-auto mb-2"></i>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider">Role</p>
-                            <p class="text-sm font-semibold text-white">UI/UX Designer</p>
-                        </div>
-                        <div class="metric-card p-4 rounded-xl text-center border-amber-500/20">
-                            <i data-lucide="smartphone" class="h-5 w-5 text-amber-400 mx-auto mb-2"></i>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider">Platform</p>
-                            <p class="text-sm font-semibold text-white">Mobile-first Web</p>
-                        </div>
-                        <div class="metric-card p-4 rounded-xl text-center border-amber-500/20">
-                            <i data-lucide="target" class="h-5 w-5 text-amber-400 mx-auto mb-2"></i>
-                            <p class="text-xs text-slate-400 uppercase tracking-wider">Scale</p>
-                            <p class="text-sm font-semibold text-white">Government</p>
-                        </div>
+                    <div class="relative pl-6 border-l-2 border-secondary/30">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-secondary"></div>
+                        <h4 class="font-bold text-lg">Senior Secondary (12th)</h4>
+                        <p class="text-secondary font-medium">Durgawati Hemraj Tah Saraswati Vidya Mandir</p>
+                        <p class="text-sm text-gray-400">2022 • CBSE • 82%</p>
                     </div>
-                </div>
-
-                <div class="p-8 md:p-12 space-y-12">
-                    <!-- Problem Statement -->
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="md:col-span-2">
-                            <h4 class="text-xl font-bold mb-4 flex items-center gap-2 text-white">
-                                <i data-lucide="alert-circle" class="h-5 w-5 text-red-400"></i>
-                                The Problem
-                            </h4>
-                            <p class="text-slate-300 leading-relaxed mb-4">
-                                Government internship portals often prioritize information density over usability, creating barriers for first-time job seekers from diverse educational backgrounds. Users struggle with complex filtering, unclear application statuses, and overwhelming listing pages that lack mobile optimization.
-                            </p>
-                            <div class="highlight-box-alt p-4 rounded-r-xl">
-                                <p class="text-sm text-slate-300 italic">
-                                    "How might we design an inclusive internship discovery experience that serves users with varying digital literacy levels while handling high-volume government-scale traffic?"
-                                </p>
-                            </div>
-                        </div>
-                        <div class="glass p-6 rounded-xl border border-amber-500/20">
-                            <h5 class="font-semibold mb-3 text-amber-400">Target Users</h5>
-                            <ul class="space-y-3 text-sm text-slate-300">
-                                <li class="flex gap-2">
-                                    <i data-lucide="user" class="h-4 w-4 text-amber-400 flex-shrink-0 mt-0.5"></i>
-                                    <div>
-                                        <span class="font-medium text-white">College Students</span>
-                                        <p class="text-xs text-slate-400">Seeking first internship experience</p>
-                                    </div>
-                                </li>
-                                <li class="flex gap-2">
-                                    <i data-lucide="user" class="h-4 w-4 text-amber-400 flex-shrink-0 mt-0.5"></i>
-                                    <div>
-                                        <span class="font-medium text-white">Recent Graduates</span>
-                                        <p class="text-xs text-slate-400">Transitioning to professional roles</p>
-                                    </div>
-                                </li>
-                                <li class="flex gap-2">
-                                    <i data-lucide="user" class="h-4 w-4 text-amber-400 flex-shrink-0 mt-0.5"></i>
-                                    <div>
-                                        <span class="font-medium text-white">Rural Applicants</span>
-                                        <p class="text-xs text-slate-400">Limited digital literacy, mobile-only access</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Process -->
-                    <div>
-                        <h4 class="text-xl font-bold mb-6 flex items-center gap-2 text-white">
-                            <i data-lucide="git-branch" class="h-5 w-5 text-amber-400"></i>
-                            Design Process
-                        </h4>
-                        <div class="grid md:grid-cols-4 gap-6">
-                            <div class="process-step text-center">
-                                <div class="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-amber-500/40">
-                                    <span class="text-amber-400 font-bold">1</span>
-                                </div>
-                                <h5 class="font-semibold mb-1 text-white">User Research</h5>
-                                <p class="text-xs text-slate-400">Interviews with 12 students; identified pain points in existing portals</p>
-                            </div>
-                            <div class="process-step text-center">
-                                <div class="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-amber-500/40">
-                                    <span class="text-amber-400 font-bold">2</span>
-                                </div>
-                                <h5 class="font-semibold mb-1 text-white">Information Arch</h5>
-                                <p class="text-xs text-slate-400">Simplified navigation; reduced menu items from 12 to 5</p>
-                            </div>
-                            <div class="process-step text-center">
-                                <div class="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-amber-500/40">
-                                    <span class="text-amber-400 font-bold">3</span>
-                                </div>
-                                <h5 class="font-semibold mb-1 text-white">Accessibility</h5>
-                                <p class="text-xs text-slate-400">High contrast modes, screen reader support, simplified language</p>
-                            </div>
-                            <div class="process-step text-center">
-                                <div class="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-amber-500/40">
-                                    <span class="text-amber-400 font-bold">4</span>
-                                </div>
-                                <h5 class="font-semibold mb-1 text-white">Prototyping</h5>
-                                <p class="text-xs text-slate-400">Interactive Figma prototype with 20+ screens and user flows</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Solution -->
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div class="order-2 md:order-1 bg-gradient-to-br from-amber-900/20 to-orange-900/20 p-6 rounded-2xl border border-amber-500/20 glow-amber">
-                            <img src="https://github.com/tushar0644/Portfolio/blob/main/pm%20internship.png?raw=true" 
-                                 alt="PM Internship App Screens" 
-                                 class="w-full rounded-lg shadow-2xl"
-                                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-64 text-slate-500\'>PM Internship App Preview</div>'">
-                        </div>
-                        <div class="order-1 md:order-2">
-                            <h4 class="text-xl font-bold mb-4 flex items-center gap-2 text-white">
-                                <i data-lucide="check-circle" class="h-5 w-5 text-amber-400"></i>
-                                The Solution
-                            </h4>
-                            <div class="space-y-4">
-                                <div class="flex gap-4">
-                                    <div class="w-8 h-8 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-amber-500/30">
-                                        <i data-lucide="search" class="h-4 w-4 text-amber-400"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-white mb-1">Smart Filtering</h5>
-                                        <p class="text-sm text-slate-400">Location, stipend range, and duration filters with visual chips and one-tap clearing. Reduced filter interaction time by 60%.</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-4">
-                                    <div class="w-8 h-8 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-amber-500/30">
-                                        <i data-lucide="bookmark" class="h-4 w-4 text-amber-400"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-white mb-1">Save & Track</h5>
-                                        <p class="text-sm text-slate-400">Bookmark internships and track application status with color-coded badges (Applied, Under Review, Shortlisted).</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-4">
-                                    <div class="w-8 h-8 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0 border border-amber-500/30">
-                                        <i data-lucide="file-text" class="h-4 w-4 text-amber-400"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-white mb-1">Simplified Cards</h5>
-                                        <p class="text-sm text-slate-400">Internship cards showing only essential info: Role, Stipend, Location, Deadline. Reduced cognitive load for quick scanning.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Key Features Grid -->
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="glass p-6 rounded-xl border border-amber-500/20 hover:border-amber-400/50 transition-all">
-                            <i data-lucide="smartphone" class="h-8 w-8 text-amber-400 mb-3"></i>
-                            <h5 class="font-semibold mb-2 text-white">Mobile-First</h5>
-                            <p class="text-sm text-slate-400">Designed for 320px screens first, ensuring accessibility on budget smartphones</p>
-                        </div>
-                        <div class="glass p-6 rounded-xl border border-amber-500/20 hover:border-amber-400/50 transition-all">
-                            <i data-lucide="eye" class="h-8 w-8 text-amber-400 mb-3"></i>
-                            <h5 class="font-semibold mb-2 text-white">Accessibility</h5>
-                            <p class="text-sm text-slate-400">WCAG 2.1 AA compliant with 4.5:1 contrast ratios and scalable text</p>
-                        </div>
-                        <div class="glass p-6 rounded-xl border border-amber-500/20 hover:border-amber-400/50 transition-all">
-                            <i data-lucide="zap" class="h-8 w-8 text-amber-400 mb-3"></i>
-                            <h5 class="font-semibold mb-2 text-white">Performance</h5>
-                            <p class="text-sm text-slate-400">Optimized for 2G/3G networks with skeleton screens and lazy loading</p>
-                        </div>
-                    </div>
-
-                    <!-- Results -->
-                    <div class="bg-gradient-to-r from-amber-600/10 to-orange-600/10 rounded-2xl p-6 border border-amber-500/20">
-                        <h4 class="text-lg font-bold mb-4 flex items-center gap-2 text-white">
-                            <i data-lucide="trending-up" class="h-5 w-5 text-amber-400"></i>
-                            Impact & Outcomes
-                        </h4>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div>
-                                <p class="text-2xl font-bold text-amber-400 mb-1">60%</p>
-                                <p class="text-sm text-slate-300">Faster task completion in user testing</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-bold text-amber-400 mb-1">5→3</p>
-                                <p class="text-sm text-slate-300">Reduced main navigation categories</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-bold text-amber-400 mb-1">100%</p>
-                                <p class="text-sm text-slate-300">Screen reader compatibility</p>
-                            </div>
-                        </div>
+                    <div class="relative pl-6 border-l-2 border-accent/30">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent"></div>
+                        <h4 class="font-bold text-lg">Secondary (10th)</h4>
+                        <p class="text-accent font-medium">St. Teresa's Convent School</p>
+                        <p class="text-sm text-gray-400">2020 • CISCE • 80%</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Other Projects -->
-    <section id="projects" class="py-24">
+    <!-- Achievements -->
+    <section class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 font-serif">Other <span class="gradient-text">Projects</span></h2>
-                <p class="text-slate-400">Technical and IoT implementations</p>
-            </div>
-            
-            <div class="max-w-2xl mx-auto">
-                <div class="glass rounded-2xl overflow-hidden group hover:border-cyan-500/50 transition-all duration-300 border border-cyan-500/20">
-                    <div class="h-48 bg-gradient-to-br from-cyan-600 to-blue-700 relative overflow-hidden">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i data-lucide="flame" class="h-16 w-16 text-white/30"></i>
-                        </div>
-                        <div class="absolute top-4 right-4">
-                            <span class="px-3 py-1 bg-black/30 backdrop-blur-md rounded-full text-xs text-white border border-white/10">IoT</span>
-                        </div>
+            <div class="glass rounded-2xl p-8 border border-white/10 reveal">
+                <h3 class="text-2xl font-display font-bold mb-6 text-center">Achievements & Recognition</h3>
+                <div class="grid md:grid-cols-4 gap-6 text-center">
+                    <div class="p-4">
+                        <i class="fas fa-trophy text-3xl text-yellow-500 mb-3"></i>
+                        <h4 class="font-semibold mb-1">Paytm Offer Letter</h4>
+                        <p class="text-sm text-gray-400">Secured full-time opportunity</p>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Fire & Smoke Detection System</h3>
-                        <p class="text-slate-400 text-sm mb-4">
-                            Built a sensor-based safety monitoring system using thermal, smoke, and gas sensors. 
-                            Transmitted real-time sensor data to the cloud for continuous observation with instant alerts.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded text-xs border border-cyan-500/30">IoT</span>
-                            <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded text-xs border border-cyan-500/30">Sensors</span>
-                            <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded text-xs border border-cyan-500/30">Cloud</span>
-                            <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded text-xs border border-cyan-500/30">Node-RED</span>
-                        </div>
+                    <div class="p-4">
+                        <i class="fas fa-medal text-3xl text-primary mb-3"></i>
+                        <h4 class="font-semibold mb-1">Top 5 Hackathon</h4>
+                        <p class="text-sm text-gray-400">Among best teams</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-24 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Work <span class="gradient-text">Experience</span></h2>
-                <p class="text-slate-400">My professional journey</p>
-            </div>
-            <div class="space-y-8 max-w-4xl mx-auto">
-                <div class="relative pl-8 md:pl-0">
-                    <div class="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-teal-500 to-transparent"></div>
-                    <div class="md:grid md:grid-cols-12 gap-8 items-start">
-                        <div class="md:col-span-3 md:text-right">
-                            <span class="text-teal-400 font-medium text-sm">Present</span>
-                            <p class="text-slate-500 text-sm mt-1">Digital Marketing & Design</p>
-                        </div>
-                        <div class="md:col-span-9 glass p-6 rounded-xl border-l-4 border-teal-500 ml-4 md:ml-0">
-                            <h3 class="text-xl font-bold text-white mb-2">Digital Marketing & Design Intern</h3>
-                            <p class="text-teal-400 font-medium mb-3">Liberin Technologies</p>
-                            <ul class="space-y-2 text-slate-300 text-sm">
-                                <li class="flex gap-2">
-                                    <i data-lucide="chevron-right" class="h-4 w-4 text-teal-400 flex-shrink-0 mt-0.5"></i>
-                                    Designed social media creatives, banners, and marketing visuals aligned with brand guidelines
-                                </li>
-                                <li class="flex gap-2">
-                                    <i data-lucide="chevron-right" class="h-4 w-4 text-teal-400 flex-shrink-0 mt-0.5"></i>
-                                    Supported digital marketing campaigns through content creation and keyword research
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="p-4">
+                        <i class="fas fa-award text-3xl text-secondary mb-3"></i>
+                        <h4 class="font-semibold mb-1">Sports Medals</h4>
+                        <p class="text-sm text-gray-400">College competitions</p>
                     </div>
-                </div>
-                <div class="relative pl-8 md:pl-0">
-                    <div class="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-slate-700"></div>
-                    <div class="md:grid md:grid-cols-12 gap-8 items-start">
-                        <div class="md:col-span-3 md:text-right">
-                            <span class="text-amber-400 font-medium text-sm">Previous</span>
-                            <p class="text-slate-500 text-sm mt-1">Web Development</p>
-                        </div>
-                        <div class="md:col-span-9 glass p-6 rounded-xl border-l-4 border-amber-500 ml-4 md:ml-0">
-                            <h3 class="text-xl font-bold text-white mb-2">Web Development Intern</h3>
-                            <p class="text-amber-400 font-medium mb-3">CodeCrafts</p>
-                            <ul class="space-y-2 text-slate-300 text-sm">
-                                <li class="flex gap-2">
-                                    <i data-lucide="chevron-right" class="h-4 w-4 text-amber-400 flex-shrink-0 mt-0.5"></i>
-                                    Assisted in building and modifying static web pages using HTML and CSS
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="p-4">
+                        <i class="fas fa-star text-3xl text-accent mb-3"></i>
+                        <h4 class="font-semibold mb-1">College Awards</h4>
+                        <p class="text-sm text-gray-400">Competition winner</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Education</h2>
-            </div>
-            <div class="max-w-3xl mx-auto space-y-6">
-                <div class="glass p-6 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-teal-500/30 transition-all border border-teal-500/10">
-                    <div>
-                        <h3 class="text-lg font-bold text-white">B.Tech CSE (IoT)</h3>
-                        <p class="text-teal-400 font-medium">ABES Institute of Technology</p>
-                        <p class="text-slate-400 text-sm mt-1">Ghaziabad</p>
-                    </div>
-                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm text-slate-300 font-medium border border-teal-500/20">2022 - 2026</span>
-                </div>
-                <div class="glass p-6 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-amber-500/30 transition-all border border-amber-500/10">
-                    <div>
-                        <h3 class="text-lg font-bold text-white">Senior Secondary (12th CBSE)</h3>
-                        <p class="text-amber-400 font-medium">Ingraham Convent School</p>
-                    </div>
-                    <span class="px-4 py-2 bg-slate-800 rounded-full text-sm text-slate-300 font-medium border border-amber-500/20">2020 - 2022</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-slate-900/30">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Let's <span class="gradient-text">Connect</span></h2>
-            <p class="text-slate-400 mb-12">Open to internship opportunities and collaborative projects</p>
-
-            <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <a href="mailto:tusharbhati0644@gmail.com" class="glass p-6 rounded-xl hover:border-teal-500/50 transition-all group border border-teal-500/10">
-                    <i data-lucide="mail" class="h-8 w-8 text-teal-400 mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="font-medium text-white mb-1">Email</h3>
-                    <p class="text-sm text-slate-400">tusharbhati0644@gmail.com</p>
-                </a>
-                <a href="tel:+919560750644" class="glass p-6 rounded-xl hover:border-amber-500/50 transition-all group border border-amber-500/10">
-                    <i data-lucide="phone" class="h-8 w-8 text-amber-400 mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="font-medium text-white mb-1">Phone</h3>
-                    <p class="text-sm text-slate-400">+91 9560750644</p>
-                </a>
-                <a href="https://linktr.ee/TUSHARBHATI0644" target="_blank" class="glass p-6 rounded-xl hover:border-cyan-500/50 transition-all group border border-cyan-500/10">
-                    <i data-lucide="link" class="h-8 w-8 text-cyan-400 mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
-                    <h3 class="font-medium text-white mb-1">Linktree</h3>
-                    <p class="text-sm text-slate-400">All social links</p>
-                </a>
+    <section id="contact" class="py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl font-display font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="text-gray-400">Let's work together on your next project</p>
             </div>
 
-            <div class="glass p-8 rounded-2xl max-w-2xl mx-auto border border-teal-500/10">
-                <h3 class="text-xl font-bold mb-4 text-white">Send me a message</h3>
-                <form onsubmit="event.preventDefault(); alert('Thanks for reaching out! I\'ll get back to you soon.');" class="space-y-4 text-left">
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="Your Name" required class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-teal-500 text-white placeholder-slate-500 transition-colors">
-                        <input type="email" placeholder="Your Email" required class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-teal-500 text-white placeholder-slate-500 transition-colors">
+            <div class="glass rounded-2xl p-8 md:p-12 border border-white/10 reveal">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <a href="mailto:abhinavraghav267@gmail.com" class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400">Email</p>
+                                    <p class="font-medium group-hover:text-primary transition-colors">abhinavraghav267@gmail.com</p>
+                                </div>
+                            </a>
+                            <a href="tel:+919599675890" class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400">Phone</p>
+                                    <p class="font-medium group-hover:text-secondary transition-colors">+91 9599675890</p>
+                                </div>
+                            </a>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-400">Location</p>
+                                    <p class="font-medium">Greater Noida, Uttar Pradesh, India</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <p class="text-sm text-gray-400 mb-4">Connect with me</p>
+                            <div class="flex gap-4">
+                                <a href="https://linkedin.com/in/abhinav-raghav-269693275" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-gray-400 hover:text-white hover:bg-[#0077b5] transition-all border border-white/10">
+                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                </a>
+                                <a href="https://github.com" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-900 transition-all border border-white/10">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="mailto:abhinavraghav267@gmail.com" class="w-12 h-12 rounded-full glass flex items-center justify-center text-gray-400 hover:text-white hover:bg-red-500 transition-all border border-white/10">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <input type="text" placeholder="Subject" required class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-teal-500 text-white placeholder-slate-500 transition-colors">
-                    <textarea rows="4" placeholder="Your Message" required class="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg focus:outline-none focus:border-teal-500 text-white placeholder-slate-500 transition-colors resize-none"></textarea>
-                    <button type="submit" class="w-full py-3 btn-primary rounded-lg font-medium text-white transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2">
-                        Send Message <i data-lucide="send" class="h-4 w-4"></i>
-                    </button>
-                </form>
+
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Message sent! (Demo only)');">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-white placeholder-gray-500" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-white placeholder-gray-500" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all text-white placeholder-gray-500 resize-none" placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-primary to-secondary rounded-lg font-semibold text-white hover:shadow-lg hover:shadow-primary/25 transition-all transform hover:scale-[1.02]">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>© 2024 Tushar Bhati. All rights reserved.</p>
-        <p class="mt-2 text-xs text-teal-500/60">Designed with passion and code</p>
+    <footer class="border-t border-white/5 py-8 bg-darker">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm">
+                    AR
+                </div>
+                <span class="font-display font-semibold">Abhinav Raghav</span>
+            </div>
+            <p class="text-gray-500 text-sm">© 2026 Abhinav Raghav. All rights reserved.</p>
+            <div class="flex gap-6 text-sm text-gray-400">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
     </footer>
 
     <script>
-        lucide.createIcons();
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-        const titles = ["UI/UX Designer", "IoT Developer", "Mobile-first Enthusiast", "Problem Solver"];
-        let titleIndex = 0;
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'bg-darker/95');
+            } else {
+                navbar.classList.remove('shadow-lg', 'bg-darker/95');
+            }
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Typewriter effect for multiple texts
+        const texts = [
+            "Full Stack Developer",
+            "QA Automation Engineer", 
+            "AI/ML Enthusiast",
+            "Problem Solver"
+        ];
+        let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const typewriterElement = document.getElementById('typewriter');
+        const typewriterElement = document.getElementById('typewriter-text');
 
         function typeWriter() {
-            const currentTitle = titles[titleIndex];
+            const currentText = texts[textIndex];
             
             if (isDeleting) {
-                typewriterElement.textContent = currentTitle.substring(0, charIndex - 1);
+                typewriterElement.textContent = currentText.substring(0, charIndex - 1);
                 charIndex--;
             } else {
-                typewriterElement.textContent = currentTitle.substring(0, charIndex + 1);
+                typewriterElement.textContent = currentText.substring(0, charIndex + 1);
                 charIndex++;
             }
 
             let typeSpeed = isDeleting ? 50 : 100;
 
-            if (!isDeleting && charIndex === currentTitle.length) {
+            if (!isDeleting && charIndex === currentText.length) {
                 typeSpeed = 2000;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
-                titleIndex = (titleIndex + 1) % titles.length;
+                textIndex = (textIndex + 1) % texts.length;
                 typeSpeed = 500;
             }
 
             setTimeout(typeWriter, typeSpeed);
         }
 
-        typeWriter();
+        // Start typewriter after initial animation
+        setTimeout(typeWriter, 4000);
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1034,43 +877,23 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    document.getElementById('mobile-menu').classList.add('hidden');
                 }
             });
         });
 
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg');
-                navbar.classList.add('bg-slate-950/90');
-                navbar.classList.add('backdrop-blur-md');
-            } else {
-                navbar.classList.remove('shadow-lg');
-                navbar.classList.remove('bg-slate-950/90');
-                navbar.classList.remove('backdrop-blur-md');
-            }
-        });
-
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-slide-up');
-                    entry.target.style.opacity = '1';
-                }
+        // Add parallax effect to blobs
+        document.addEventListener('mousemove', (e) => {
+            const blobs = document.querySelectorAll('.blob');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            blobs.forEach((blob, index) => {
+                const speed = (index + 1) * 20;
+                const xOffset = (window.innerWidth / 2 - e.clientX) / speed;
+                const yOffset = (window.innerHeight / 2 - e.clientY) / speed;
+                blob.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.glass, .case-study-card, .metric-card').forEach((el) => {
-            el.style.opacity = '0';
-            observer.observe(el);
         });
     </script>
 </body>
 </html>
-
